@@ -7,7 +7,7 @@
  * After installation, Claude Code will automatically configure local domain
  * routing when starting dev servers.
  * 
- * Usage: npx @matmaz99/human-host
+ * Usage: npx human-host
  */
 
 const fs = require('fs');

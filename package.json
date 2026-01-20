@@ -1,5 +1,5 @@
 {
-  "name": "@matmaz99/human-host",
+  "name": "human-host",
   "version": "1.0.0",
   "description": "Claude Code skill for automatic local domain routing. Run once to install the skill, then Claude will automatically configure http://projectname.localhost URLs when starting dev servers.",
   "keywords": [
@@ -27,8 +27,5 @@
   ],
   "engines": {
     "node": ">=16.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

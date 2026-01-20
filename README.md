@@ -9,7 +9,7 @@ A Claude Code skill that automatically configures `http://projectname.localhost`
 Run in your project directory:
 
 ```bash
-npx @matmaz99/human-host
+npx human-host
 ```
 
 This installs the skill to `.claude/skills/human-host/`.
