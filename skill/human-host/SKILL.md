@@ -1,5 +1,5 @@
 ---
-name: local-domain
+name: human-host
 description: Automatically configure local domain routing when starting development servers. Use this skill whenever starting a dev server (npm run dev, yarn dev, pnpm dev), running a project locally, or when the user asks to start/run/launch the application. This skill registers projects with Hotel so they're accessible via http://projectname.localhost instead of localhost:port.
 ---
 

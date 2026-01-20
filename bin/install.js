@@ -3,7 +3,7 @@
 /**
  * Local Domain Skill Installer for Claude Code
  * 
- * Installs the local-domain skill to .claude/skills/ in the current project.
+ * Installs the human-host skill to .claude/skills/ in the current project.
  * After installation, Claude Code will automatically configure local domain
  * routing when starting dev servers.
  * 
@@ -32,8 +32,8 @@ const log = {
 
 // Get paths
 const cwd = process.cwd();
-const skillSource = path.join(__dirname, '..', 'skill', 'local-domain');
-const skillDest = path.join(cwd, '.claude', 'skills', 'local-domain');
+const skillSource = path.join(__dirname, '..', 'skill', 'human-host');
+const skillDest = path.join(cwd, '.claude', 'skills', 'human-host');
 
 // Copy directory recursively
 function copyDir(src, dest) {
@@ -82,7 +82,7 @@ function main() {
   fs.mkdirSync(path.join(cwd, '.claude', 'skills'), { recursive: true });
   
   // Copy skill files
-  log.info('Installing local-domain skill...');
+  log.info('Installing human-host skill...');
   copyDir(skillSource, skillDest);
   
   // Add .claude to .gitignore if not present
@@ -103,7 +103,7 @@ function main() {
   console.log(`${colors.green}═══════════════════════════════════════════════════${colors.reset}`);
   console.log('');
   console.log(`   ${colors.dim}Skill installed to:${colors.reset}`);
-  console.log(`   ${colors.blue}.claude/skills/local-domain/${colors.reset}`);
+  console.log(`   ${colors.blue}.claude/skills/human-host/${colors.reset}`);
   console.log('');
   console.log(`   ${colors.dim}What happens now:${colors.reset}`);
   console.log(`   When you ask Claude Code to start a dev server,`);

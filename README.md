@@ -12,7 +12,7 @@ Run in your project directory:
 npx @matmaz99/human-host
 ```
 
-This installs the skill to `.claude/skills/local-domain/`.
+This installs the skill to `.claude/skills/human-host/`.
 
 ## One-Time Machine Setup
 
@@ -78,7 +78,7 @@ After installation:
 your-project/
 ├── .claude/
 │   └── skills/
-│       └── local-domain/
+│       └── human-host/
 │           ├── SKILL.md
 │           └── scripts/
 │               └── setup.sh
