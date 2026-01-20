@@ -1,0 +1,31 @@
+{
+  "name": "@matmaz99/human-host",
+  "version": "1.0.0",
+  "description": "Claude Code skill for automatic local domain routing. Run once to install the skill, then Claude will automatically configure http://projectname.localhost URLs when starting dev servers.",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skill",
+    "local-domain",
+    "localhost",
+    "hotel",
+    "dev-server",
+    "development"
+  ],
+  "author": "matmaz99",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matmaz99/human-host"
+  },
+  "bin": {
+    "human-host": "./bin/install.js"
+  },
+  "files": [
+    "bin/",
+    "skill/"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
