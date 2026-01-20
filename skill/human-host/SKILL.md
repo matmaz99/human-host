@@ -1,37 +1,30 @@
 ---
 name: human-host
-description: Automatically configure local domain routing when starting development servers. Use this skill whenever starting a dev server (npm run dev, yarn dev, pnpm dev), running a project locally, or when the user asks to start/run/launch the application. This skill registers projects with Hotel so they're accessible via http://projectname.localhost instead of localhost:port.
+description: ALWAYS use this skill when starting ANY development server. This skill is MANDATORY for all dev server starts.
 ---
 
-# Local Domain Routing
+# 🌐 Human Host - Local Domain Routing (ALWAYS ACTIVE)
 
-This skill configures automatic local domain routing for development servers using Hotel.
+**CRITICAL: This skill MUST be used for ALL development server starts, including:**
+- npm run dev / yarn dev / pnpm dev / bun dev
+- npm start / yarn start
+- Any command that starts a local server
+- When user says: "start server", "run server", "start dev", "run the project", "launch app"
 
-## When to Use
+## MANDATORY Workflow (Follow EVERY Time)
 
-Use this skill when:
-- Starting a development server (`npm run dev`, `yarn dev`, `pnpm dev`)
-- User asks to "start the server", "run the project", "launch the app"
-- User asks about accessing the project locally
-- Setting up a new project for the first time
+**YOU MUST follow these steps EVERY SINGLE TIME you start a dev server:**
 
-## Prerequisites Check
+### Step 1: Ensure Hotel is Running
 
-Before starting any dev server, run this check:
+BEFORE doing anything else, run:
 
 ```bash
-# Check if Hotel is installed, install if missing
 which hotel || npm install -g hotel
-
-# Ensure Hotel daemon is running
 pgrep -f "hotel" || hotel start
 ```
 
-## Automatic Workflow
-
-When starting a dev server, **always** follow these steps:
-
-### Step 1: Determine Project Name
+### Step 2: Determine Project Name
 
 Get the project name from (in priority order):
 1. `.hotel` file in project root (if exists)
@@ -40,7 +33,7 @@ Get the project name from (in priority order):
 
 Sanitize the name: lowercase, replace spaces/special chars with `-`.
 
-### Step 2: Determine Port
+### Step 3: Determine Port
 
 Get the port from (in priority order):
 1. `.hotel` file in project root (if exists)
@@ -55,7 +48,7 @@ Get the port from (in priority order):
    - Express: 3000
 3. Ask user if ambiguous
 
-### Step 3: Register with Hotel
+### Step 4: Register with Hotel (REQUIRED!)
 
 ```bash
 hotel add "npm run dev" --name PROJECTNAME --port PORT
@@ -63,21 +56,23 @@ hotel add "npm run dev" --name PROJECTNAME --port PORT
 
 Replace `PROJECTNAME` and `PORT` with actual values.
 
-### Step 4: Start the Server
+### Step 5: Start the Server
 
 Run the dev command normally:
 ```bash
 npm run dev
 ```
 
-### Step 5: Inform the User
+### Step 6: ALWAYS Inform the User
 
-Always tell the user both URLs:
+You MUST tell the user the .localhost URL:
 
 ```
 🌐 Server running at: http://PROJECTNAME.localhost
    (Also available at: localhost:PORT)
 ```
+
+**DO NOT skip this message! The .localhost URL is the whole point!**
 
 ## Example Interaction
 
