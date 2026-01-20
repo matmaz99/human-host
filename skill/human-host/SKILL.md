@@ -65,14 +65,16 @@ npm run dev
 
 ### Step 6: ALWAYS Inform the User
 
-You MUST tell the user the .localhost URL:
+You MUST tell the user the clean Hotel URL:
 
 ```
-🌐 Server running at: http://PROJECTNAME.localhost
-   (Also available at: localhost:PORT)
+🌐 Server running at: http://localhost:2000/PROJECTNAME
+   (Direct access: http://localhost:PORT)
 ```
 
-**DO NOT skip this message! The .localhost URL is the whole point!**
+**DO NOT skip this message! The clean URL is the whole point!**
+
+This URL works immediately without any system configuration.
 
 ## Example Interaction
 
@@ -91,8 +93,8 @@ npm run dev
 ```
 
 **Claude says:**
-> 🌐 Server running at: **http://timelapse.localhost**
-> (Also available at: localhost:3000)
+> 🌐 Server running at: **http://localhost:2000/timelapse**
+> (Direct access: http://localhost:3000)
 
 ## Project Configuration File
 
@@ -133,7 +135,17 @@ hotel add "npm run dev" --name PROJECTNAME --port PORT
 
 ## Important Notes
 
-- **Always** mention the `.localhost` URL to the user, not just `localhost:port`
+- **Always** mention the Hotel URL (`localhost:2000/projectname`) to the user
+- This approach works immediately - no system configuration required
+- Hotel dashboard available at http://localhost:2000 shows all projects
 - Hotel daemon runs in background and persists across terminal sessions
-- Multiple projects can be registered simultaneously
-- Hotel dashboard available at http://localhost:2000
+- Multiple projects can be registered and run simultaneously
+
+## Advanced: .localhost Domains (Optional)
+
+If users want `http://projectname.localhost` URLs (no port), they need to configure macOS proxy:
+1. System Settings → Network → Advanced → Proxies
+2. Enable "Automatic Proxy Configuration"
+3. Set URL to: `http://localhost:2000/proxy.pac`
+
+But `localhost:2000/projectname` works great without this!

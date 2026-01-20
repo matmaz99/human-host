@@ -1,8 +1,8 @@
-# 🌐 Local Domain Skill for Claude Code
+# 🌐 Human Host - Local Domain Skill for Claude Code
 
-A Claude Code skill that automatically configures `http://projectname.localhost` URLs when starting development servers.
+A Claude Code skill that automatically gives your dev servers clean URLs via Hotel.
 
-**No more remembering ports!**
+**No more remembering ports! Access projects at `http://localhost:2000/projectname`**
 
 ## Installation
 
@@ -34,7 +34,7 @@ Claude will automatically:
 1. Ensure Hotel is running
 2. Register your project with Hotel
 3. Start the dev server
-4. Tell you the URL: `http://projectname.localhost`
+4. Give you a clean URL: `http://localhost:2000/projectname`
 
 ## Example
 
@@ -47,16 +47,21 @@ hotel add "npm run dev" --name myproject --port 3000
 npm run dev
 ```
 
-> 🌐 Server running at: **http://myproject.localhost**
-> (Also available at: localhost:3000)
+> 🌐 Server running at: **http://localhost:2000/myproject**
+> (Direct access: http://localhost:3000)
 
 ## Before & After
 
 | Before | After |
 |--------|-------|
-| localhost:3000 | http://timelapse.localhost |
-| localhost:3001 | http://stockdeporte.localhost |
-| localhost:3002 | http://christaud.localhost |
+| localhost:3000 | http://localhost:2000/timelapse |
+| localhost:3001 | http://localhost:2000/stockdeporte |
+| localhost:3002 | http://localhost:2000/christaud |
+
+**Why this is better:**
+- ✅ Works immediately - no system configuration
+- ✅ One easy-to-remember URL pattern
+- ✅ Hotel dashboard at http://localhost:2000 shows all projects
 
 ## Project Configuration (Optional)
 
